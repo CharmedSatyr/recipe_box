@@ -1,0 +1,39 @@
+body {
+    background: #ffffff url('http://freefoodphotos.com/imagelibrary/vegetables/fresh_carrots.jpg') no-repeat center;
+}
+
+.navbar {
+    background: green;
+    padding-top: 2vh;
+    padding-left: 1vw;
+
+    .cs img {
+        height: 5vh;
+        margin-top: -2vh;
+    }
+
+    .t img {
+        height: 3.5vh;
+        margin-top: -1vh;
+    }
+
+    .g img {
+        height: 6vh;
+        margin-top: -2.25vh;
+    }
+
+    button {
+        float: right;
+        height: 6vh;
+    }
+}
+
+.bigbox {
+    color: blue;
+    height: 80vh;
+
+    .littlebox {
+        background: green;
+        color: red;
+    }
+}
