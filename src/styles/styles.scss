@@ -4,36 +4,39 @@ body {
 
 .navbar {
     background: green;
-    padding-top: 2vh;
-    padding-left: 1vw;
-
-    .cs img {
-        height: 5vh;
-        margin-top: -2vh;
-    }
-
-    .t img {
-        height: 3.5vh;
-        margin-top: -1vh;
-    }
-
-    .g img {
-        height: 6vh;
-        margin-top: -2.25vh;
-    }
 
     button {
         float: right;
-        height: 6vh;
+        margin: 1vh;
     }
 }
 
 .bigbox {
     color: blue;
-    height: 80vh;
+    text-align: center;
 
     .littlebox {
+      h2 {
+        height: 5vh;
+        margin: 0;
+      }
+      p {
+        height: 2vh;
+      }
         background: green;
-        color: red;
+        border: 1px solid darkgray;
+        color: white;
+        height: auto;
+        padding: 0;
+
+        img {
+            height: 18vh;
+        }
+
+        button {
+            margin: 1vh;
+        }
+        height: 35vh;
+
     }
 }
