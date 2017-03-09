@@ -4,37 +4,34 @@ import {Button} from 'react-bootstrap';
 class PopUp extends React.Component {
     render() {
         return (
-            <div className='popup'>
-                <form method="" action="">
-                    <div className="row">
-                        <div className="col-xs-3 col-xs-offset-1">
-                            Recipe Name
-                        </div>
-                        <input id="recipeName" type="text" name="recipeName" className="col-xs-4"/>
-                    </div>
-                    <div className="row">
-                        <div className="col-xs-3 col-xs-offset-1">
-                            Recipe URL
-                        </div>
-                        <input id="recipeURL" type="text" name="recipeURL" className="col-xs-4"/>
-                    </div>
-                    <div className="row">
-                        <div className="col-xs-3 col-xs-offset-1">
-                            Photo URL
-                        </div>
-                        <input id="photoURL" type="text" name="photoURL" className="col-xs-4"/>
-                    </div>
-                    <div className="row">
-                        <div className="col-xs-3 col-xs-offset-1">
-                            Ingredients
-                        </div>
-                        <textarea id="ingredients" type="text" name="ingredients" className="col-xs-4"/>
-                    </div>
+            <form name='AddPopUp'>
+                <label>
+                    Name:
                     <br/>
-                    <input id="Save" type="Save" value="Save" className="btn btn-default"/>
-                </form>
-            </div>
-        )
+                    <input name='recipe_name' type='text' value={this.props.recipe_name} onChange={this.props.handleInputChange}/>
+                </label>
+                <br/>
+                <label>
+                    Ingredients:
+                    <br/>
+                    <textarea name="ingredients" type="text" value={this.props.ingredients} onChange={this.props.handleInputChange}/>
+                </label>
+                <br/>
+                <label>
+                    Directions:
+                    <br/>
+                    <textarea name="directions" type="text" value={this.props.directions} onChange={this.props.handleInputChange}/>
+                </label>
+                <br/>
+                <label>
+                    Image URL:
+                    <br/>
+                    <input name='img' type='url' value={this.props.img} onChange={this.props.handleInputChange}/>
+                </label>
+                <br/>
+                <input type="submit" value="Submit" onClick={this.props.handleSubmit}/>
+            </form>
+        );
     }
 }
 
