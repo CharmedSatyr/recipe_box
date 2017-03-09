@@ -15,28 +15,36 @@ body {
     color: blue;
     text-align: center;
 
-    .littlebox {
-      h2 {
-        height: 5vh;
-        margin: 0;
-      }
-      p {
-        height: 2vh;
-      }
-        background: green;
-        border: 1px solid darkgray;
-        color: white;
-        height: auto;
-        padding: 0;
+}
 
-        img {
-            height: 18vh;
-        }
+.littlebox {
+    background: green;
+    border: 1px solid darkgray;
+    color: white;
+    height: auto;
+    padding: 0;
 
-        button {
-            margin: 1vh;
-        }
-        height: 35vh;
-
+    img {
+        height: 18vh;
     }
+
+    button {
+        margin: 1vh;
+    }
+
+}
+
+.popup {
+  background: white;
+  height: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 5vh;
+  text-align: center;
+  width: 50%;
+  z-index: 2;
 }

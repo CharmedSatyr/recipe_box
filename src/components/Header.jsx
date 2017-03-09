@@ -6,7 +6,7 @@ class Header extends React.Component {
         return (
             <div className='navbar'>
                 <div className='container-fluid'>
-                    <Button onClick={this.props.handleClick}>Add Recipe</Button>
+                    <Button onClick={this.props.handleClickAdd}>Add Recipe</Button>
                 </div>
             </div>
         )

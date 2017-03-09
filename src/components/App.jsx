@@ -1,37 +1,69 @@
 import React from 'react';
 
 import Header from './Header.jsx';
-import BigBox from './BigBox.jsx';
 import LittleBox from './LittleBox.jsx';
+import PopUp from './PopUp.jsx';
 
-const toast = <LittleBox recipe_name = 'toast' ingredients = 'bread, butter, fire' img = 'http://www.freeclipartpictures.com/clipart/clip-art/pictures/toast.jpg' />;
-const cheeseburger = <LittleBox recipe_name = 'cheeseburger' ingredients = 'bread, meat, cheese, veg' img = 'http://5tim.com/wp-content/uploads/2011/05/hamburger.jpg' />;
+const toast = {
+    recipe_name: 'toast',
+    ingredients: 'bread, butter, fire',
+    img: 'http://www.freeclipartpictures.com/clipart/clip-art/pictures/toast.jpg'
+}
 
-let recipe = [toast, cheeseburger];
+const cheeseburger = {
+    recipe_name: 'cheeseburger',
+    ingredients: 'bread, meat, cheese, veg',
+    img: 'http://5tim.com/wp-content/uploads/2011/05/hamburger.jpg'
+}
 
+const dummy = {
+    recipe_name: '',
+    ingredients: '',
+    img: ''
+}
+
+let recipes = [];
 
 class App extends React.Component {
+
     constructor() {
         super();
         this.state = {
-            show: recipe
+            data: recipes = [toast, cheeseburger]
         }
     }
-    componentWillMount() {
-
-    }
-    Add() {
+    add() {
         console.log('Add');
-        recipe.push(<LittleBox/>);
-        this.setState({show: recipe});
+        //document.getElementById('popup').write(<PopUp/>);
+        recipes.push(dummy);
+        this.setState({data: recipes});
+    }
+    delete(index) {
+        console.log('Delete');
+        recipes.splice(index, 1);
+        this.setState({data: recipes});
+        //The `this` argument at the end of this.state.data.map() is required binding
+    }
+    edit() {
+        console.log('Edit');
     }
     render() {
         return (
             <div>
-                <Header handleClick={this.Add.bind(this)}/>
-                <BigBox show={this.state.show}/>
+                <div id='popup'/>
+                <Header handleClickAdd={this.add.bind(this)}/>
+                <div className='row'>
+                    <div className='col-xs-10 col-xs-offset-1 well bigbox'>
+                        <h1>Recipe Box</h1>
+                        <div className='row'>
+                            {this.state.data.map(function(item, index) {
+                                return (<LittleBox key={index} recipe_name={item.recipe_name} ingredients={item.ingredients} img={item.img} handleClickEdit={console.log('edit')} handleClickDel={this.delete.bind(this, index)}/>)
+                            }, this)}
+                        </div>
+                    </div>
+                </div>
             </div>
-        )
+        );
     }
 }
 
