@@ -17,11 +17,12 @@ function Recipe(recipe_name, ingredients, directions, img) {
 
 let toast = new Recipe('Toast', 'bread, butter, fire', 'Put them together.', 'http://www.freeclipartpictures.com/clipart/clip-art/pictures/toast.jpg');
 let cheeseburger = new Recipe('Cheeseburger', 'bread, meat, cheese, veg', 'Put them together.', 'http://5tim.com/wp-content/uploads/2011/05/hamburger.jpg');
-let dummy = new Recipe('Recipe', 'Ingredients', 'Directions', 'http://img.clipartall.com/download-this-image-as-food-clipart-600_465.png');
+const dummy = new Recipe('Recipe', 'Ingredients', 'Directions', 'http://img.clipartall.com/download-this-image-as-food-clipart-600_465.png');
 
 class App extends React.Component {
 
     constructor() {
+
         super();
         this.state = {
             data: recipes = [
@@ -31,7 +32,10 @@ class App extends React.Component {
             ingredients: dummy.ingredients,
             directions: dummy.directions,
             img: dummy.img,
-            PopUpClassName: 'hide'
+            PopUpClassName: 'hide',
+            editClassName: 'hide',
+            submitClassName: '',
+            i: 0
         }
     }
     add() {
@@ -47,7 +51,13 @@ class App extends React.Component {
             img: dummy.img,
             PopUpClassName: 'hide'
         });
-        document.forms['AddPopUp'].reset()
+        document.forms['PopUp'].reset();
+        event.preventDefault();
+    }
+    handleSubmitEdit(event) {
+        recipes.splice((this.state.i), 1, new Recipe(document.forms['PopUp'].recipe_name.value, document.forms['PopUp'].ingredients.value, document.forms['PopUp'].directions.value, document.forms['PopUp'].img.value));
+        this.setState({PopUpClassName: 'hide', editClassName: 'hide', submitClassName: ''});
+        document.forms['PopUp'].reset();
         event.preventDefault();
     }
     handleInputChange(event) {
@@ -65,12 +75,12 @@ class App extends React.Component {
         //The `this` argument at the end of this.state.data.map() is required binding
     }
     edit(index) {
-        this.setState({PopUpClassName: ''});
-        document.forms['AddPopUp'].recipe_name.value = recipes[index].recipe_name;
-        document.forms['AddPopUp'].ingredients.value = recipes[index].ingredients;
-        document.forms['AddPopUp'].directions.value = recipes[index].directions;
-        document.forms['AddPopUp'].img.value = recipes[index].img;
-        //recipes.splice(index, 1);
+        this.setState({PopUpClassName: '', editClassName: 'edit', submitClassName: 'hide'});
+        document.forms['PopUp'].recipe_name.value = recipes[index].recipe_name;
+        document.forms['PopUp'].ingredients.value = recipes[index].ingredients;
+        document.forms['PopUp'].directions.value = recipes[index].directions;
+        document.forms['PopUp'].img.value = recipes[index].img;
+        this.setState({i: index});
         //The `this` argument at the end of this.state.data.map() is required binding
     }
     render() {
@@ -78,7 +88,7 @@ class App extends React.Component {
             <div>
                 <Header handleClickAdd={this.add.bind(this)}/>
                 <div id='popup' className={this.state.PopUpClassName}>
-                    <PopUp handleInputChange={this.handleInputChange.bind(this)} handleSubmit={this.handleSubmit.bind(this)}/>
+                    <PopUp editClassName={this.state.editClassName} submitClassName={this.state.submitClassName} handleInputChange={this.handleInputChange.bind(this)} handleSubmit={this.handleSubmit.bind(this)} handleSubmitEdit={this.handleSubmitEdit.bind(this)}/>
                 </div>
                 <div className='row'>
                     <div className='col-xs-10 col-xs-offset-1 well bigbox'>

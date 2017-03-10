@@ -4,7 +4,7 @@ import {Button} from 'react-bootstrap';
 class PopUp extends React.Component {
     render() {
         return (
-            <form name='AddPopUp'>
+            <form name='PopUp'>
                 <label>
                     Name:
                     <br/>
@@ -29,7 +29,8 @@ class PopUp extends React.Component {
                     <input name='img' type='url' value={this.props.img} onChange={this.props.handleInputChange}/>
                 </label>
                 <br/>
-                <input type="submit" value="Submit" onClick={this.props.handleSubmit}/>
+                <input className={this.props.submitClassName} type="submit" value="Submit" onClick={this.props.handleSubmit}/>
+                <input className={this.props.editClassName} type="submit" value="Save" onClick={this.props.handleSubmitEdit}/>
             </form>
         );
     }
