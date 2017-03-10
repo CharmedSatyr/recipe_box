@@ -29,6 +29,7 @@ class PopUp extends React.Component {
                     <input name='img' type='url' value={this.props.img} onChange={this.props.handleInputChange}/>
                 </label>
                 <br/>
+                <button onClick={this.props.handleClose}>Close</button>
                 <input className={this.props.submitClassName} type="submit" value="Submit" onClick={this.props.handleSubmit}/>
                 <input className={this.props.editClassName} type="submit" value="Save" onClick={this.props.handleSubmitEdit}/>
             </form>
