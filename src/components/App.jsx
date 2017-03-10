@@ -59,15 +59,19 @@ class App extends React.Component {
 
         this.setState({[name]: value});
     }
-
     delete(index) {
-        console.log('Delete');
         recipes.splice(index, 1);
         this.setState({data: recipes});
         //The `this` argument at the end of this.state.data.map() is required binding
     }
-    edit() {
-        console.log('Edit');
+    edit(index) {
+        this.setState({PopUpClassName: ''});
+        document.forms['AddPopUp'].recipe_name.value = recipes[index].recipe_name;
+        document.forms['AddPopUp'].ingredients.value = recipes[index].ingredients;
+        document.forms['AddPopUp'].directions.value = recipes[index].directions;
+        document.forms['AddPopUp'].img.value = recipes[index].img;
+        //recipes.splice(index, 1);
+        //The `this` argument at the end of this.state.data.map() is required binding
     }
     render() {
         return (
@@ -81,7 +85,7 @@ class App extends React.Component {
                         <h1>Recipe Box</h1>
                         <div className='row'>
                             {this.state.data.map(function(item, index) {
-                                return (<LittleBox key={index} recipe_name={item.recipe_name} ingredients={item.ingredients} directions={item.directions} img={item.img} handleClickEdit={console.log('edit')} handleClickDel={this.delete.bind(this, index)}/>)
+                                return (<LittleBox key={index} recipe_name={item.recipe_name} ingredients={item.ingredients} directions={item.directions} img={item.img} handleClickEdit={this.edit.bind(this, index)} handleClickDel={this.delete.bind(this, index)}/>)
                             }, this)}
                         </div>
                     </div>
