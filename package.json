@@ -23,6 +23,7 @@
   "homepage": "https://github.com/charmedsatyr/recipe_box#readme",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "marked": "^0.3.6",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2"

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Button} from 'react-bootstrap';
 
 class PopUp extends React.Component {
     render() {
         return (
             <form name='PopUp'>
+            <h4>Style your recipe using <a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>GitHub-flavored Markdown Language</a></h4>
                 <label>
                     Name:
                     <br/>
@@ -12,15 +13,21 @@ class PopUp extends React.Component {
                 </label>
                 <br/>
                 <label>
+                    Description:
+                    <br/>
+                    <input name="description" type="text" value={this.props.description} onChange={this.props.handleInputChange}/>
+                </label>
+                <br/>
+                <label>
                     Ingredients:
                     <br/>
-                    <textarea name="ingredients" type="text" value={this.props.ingredients} onChange={this.props.handleInputChange}/>
+                    <textarea name="ingredients" type="text" rows='5' value={this.props.ingredients} onChange={this.props.handleInputChange}/>
                 </label>
                 <br/>
                 <label>
                     Directions:
                     <br/>
-                    <textarea name="directions" type="text" value={this.props.directions} onChange={this.props.handleInputChange}/>
+                    <textarea name="directions" type="text" rows='5' value={this.props.directions} onChange={this.props.handleInputChange}/>
                 </label>
                 <br/>
                 <label>
@@ -29,9 +36,9 @@ class PopUp extends React.Component {
                     <input name='img' type='url' value={this.props.img} onChange={this.props.handleInputChange}/>
                 </label>
                 <br/>
-                <button onClick={this.props.handleClose}>Close</button>
-                <input className={this.props.submitClassName} type="submit" value="Submit" onClick={this.props.handleSubmit}/>
-                <input className={this.props.editClassName} type="submit" value="Save" onClick={this.props.handleSubmitEdit}/>
+                <Button onClick={this.props.handleClose}>Close</Button>
+                <Button className={this.props.submitClassName} type="submit" onClick={this.props.handleSubmit}>Save</Button>
+                <Button className={this.props.editClassName} type="submit" onClick={this.props.handleSubmitEdit}>Save</Button>
             </form>
         );
     }
