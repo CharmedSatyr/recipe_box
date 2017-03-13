@@ -2,25 +2,34 @@
     font-family: 'Fredericka the Great';
     src: url('../fonts/Fredericka_the_Great/FrederickatheGreat-Regular.ttf');
 }
+
+$dark: #232323;
+$bs-border: 1px solid #e3e3e3;
+$red: rgba(118, 25, 40, 0.4);
+$yellow: rgba(255, 248, 171, 1);
+
 @mixin popup {
     .titles {
         text-align: center;
     }
     background: #ffffff;
-    border: 1px solid #e3e3e3;
+    background: url('../img/creampaper.png');
+    border: $bs-border;
     border-radius: 4px;
+    color: $dark;
     font-family: 'Fredericka the Great', cursive;
     left: 0;
     margin: 1.5vh auto;
-    padding: 2vh 5vh;
+    padding: 5vh;
     position: absolute;
     right: 0;
     width: 75%;
     z-index: 1;
 
     img {
-        height: 18vh;
+        height: 100%;
         margin-bottom: 1vh;
+        z-index: -1;
     }
 
     button {
@@ -29,41 +38,53 @@
 
     input,
     textarea {
-        border: 1px solid #e3e3e3;
+        border: 1px inset $dark;
         border-radius: 4px;
         font-weight: 400;
         margin-bottom: 1vh;
         font-family: sans-serif;
         width: 60vw;
     }
+
+    input {
+        height: 4vh;
+    }
 }
 
 body {
-    background: #ffffff url('../img/vegetable-still-life.jpg') no-repeat center;
+    background-color: $dark;
+    background: $dark url('../img/vegetable-still-life.jpg') no-repeat center;
+    background-attachment: fixed;
     text-align: center;
+    overflow-x: hidden;
 }
 
 .navbar {
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
     background: rgba(132, 190, 110, 0.93);
-    border-bottom: 1px solid #e3e3e3 !important;
+    border-bottom: $bs-border !important;
     border-radius: 0 !important;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05), 0 0 2px $dark;
     font-family: 'Fredericka the Great', cursive;
-    letter-spacing: 3px;
 
     button {
+        color: $dark;
         float: right;
         margin: 1.5vh 1vh 1vh;
+
+        &:hover {
+            background: $yellow;
+        }
     }
 
     .RecipeBox {
-        color: #020202;
+        color: $dark;
         margin-top: 2vh;
         font-variant: small-caps;
         font-weight: 900;
         font-size: 250%;
-        margin-right: -7%;
+        letter-spacing: 3px;
+        margin-right: -10%;
     }
 }
 
@@ -71,35 +92,86 @@ body {
     text-align: center;
 }
 
-.littlebox {
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-    background: rgba(240, 240, 240, 0.93);
-    border: 1px solid #e3e3e3;
+.right-float {
+    float: right;
+}
+
+#test {
+    background-clip: content-box;
+    background-position: center;
+    border: 5px solid (0, 0, 0, 1);
     border-radius: 4px;
-    color: #000000;
+    bottom: 0;
+    box-shadow: inset 0 0 3px $dark;
+    display: block;
+    left: 0;
+    margin: 2vh 1.25vw 5vh;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scale(1);
+    z-index: -1;
+}
+
+.littlebox {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.6);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    border: 5px solid $dark;
+    border-radius: 0;
+    box-shadow: 0 0 1px $dark;
+    color: rgba(250, 250, 250, 0.9);
     font-family: 'Fredericka the Great', cursive;
-    margin: 0 0 5vh;
+    margin: 2vh 0 5vh;
     padding: 3%;
+    text-shadow: 0 0 5px $dark;
+    z-index: 2;
 
     img {
-        height: 18vh;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        border: 1px solid $dark;
+        box-shadow: 0 0 15px $dark;
+        height: 20vh;
         margin-bottom: 1vh;
+        max-width: 25vw;
+        user-select: none;
     }
 
     button {
         margin: 1vh;
     }
+
+    &:hover {
+        background: $red;
+        cursor: pointer;
+    }
 }
 
-#popup {
+#Editor {
     @include popup;
     text-align: center;
+
+    #left {
+        float: left;
+        margin-left: 5.5vw;
+    }
+
+    #right {
+        float: right;
+        margin-right: 5.5vw;
+    }
 }
 
 .view {
     @include popup;
     text-align: left;
+
 }
 
 .edit .hide {

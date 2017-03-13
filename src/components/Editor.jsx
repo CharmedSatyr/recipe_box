@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import {Button} from 'react-bootstrap';
 
-class PopUp extends React.Component {
+class Editor extends React.Component {
     render() {
         return (
-            <form name='PopUp'>
-            <h4>Style your recipe using <a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>GitHub-flavored Markdown Language</a></h4>
+            <form name='Editor'>
+                <h4>Style your recipe using
+                    <a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>GitHub-flavored Markdown Language</a>
+                </h4>
+                <br/>
                 <label>
                     Name:
                     <br/>
@@ -36,12 +39,15 @@ class PopUp extends React.Component {
                     <input name='img' type='url' value={this.props.img} onChange={this.props.handleInputChange}/>
                 </label>
                 <br/>
-                <Button onClick={this.props.handleClose}>Close</Button>
-                <Button className={this.props.submitClassName} type="submit" onClick={this.props.handleSubmit}>Save</Button>
-                <Button className={this.props.editClassName} type="submit" onClick={this.props.handleSubmitEdit}>Save</Button>
+                <Button id='left' className='btn btn-danger' onClick={this.props.handleDelete}>Delete</Button>
+                <span id='right'>
+                    <Button className={this.props.submitClassName} type="submit" onClick={this.props.handleSubmit}>Save</Button>
+                    <Button className={this.props.editClassName} type="submit" onClick={this.props.handleSubmitEdit}>Save</Button>
+                    <Button onClick={this.props.handleClose}>Close</Button>
+                </span>
             </form>
         );
     }
 }
 
-export default PopUp;
+export default Editor;
