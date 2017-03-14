@@ -5,7 +5,7 @@ class Editor extends React.Component {
     render() {
         return (
             <form name='Editor'>
-                <h4>Style your recipe using
+                <h4>Style your recipe using&nbsp;
                     <a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>GitHub-flavored Markdown Language</a>
                 </h4>
                 <br/>

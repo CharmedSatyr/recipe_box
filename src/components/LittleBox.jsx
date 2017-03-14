@@ -11,7 +11,7 @@ class LittleBox extends React.Component {
             <span>
 
                 <div className='col-xs-4'>
-                    <div id='test' style={pic}/>
+                    <div id='bg_food' style={pic}/>
                     <div className='littlebox'>
                         <div onClick={this.props.handleClickView}>
                             <h3>
@@ -22,13 +22,10 @@ class LittleBox extends React.Component {
                                 </strong>
                             </h3>
                             <h4>
-                                <strong>
-                                    <span className='titles' dangerouslySetInnerHTML={{
-                                        __html: marked(this.props.description)
-                                    }}/>
-                                </strong>
+                                <span className='titles' dangerouslySetInnerHTML={{
+                                    __html: marked(this.props.description)
+                                }}/>
                             </h4>
-                            <br/>
                             <img src={this.props.img || 'http://img.clipartall.com/download-this-image-as-food-clipart-600_465.png'}/>
                             <br/>
                         </div>

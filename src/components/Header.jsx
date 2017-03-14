@@ -6,7 +6,7 @@ class Header extends React.Component {
         return (
             <div className='navbar'>
                 <div className='container-fluid'>
-                <span className='RecipeBox'>Recipe Box</span>
+                <span className='title'>Recipe Box</span>
                     <Button onClick={this.props.handleClickAdd}>Add Recipe</Button>
                 </div>
             </div>
