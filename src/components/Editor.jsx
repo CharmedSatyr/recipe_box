@@ -34,7 +34,7 @@ class Editor extends React.Component {
                 </label>
                 <br/>
                 <label>
-                    Image URL:
+                    Image URL (e.g., https://www.example.com/photo.jpg):
                     <br/>
                     <input name='img' type='url' value={this.props.img} onChange={this.props.handleInputChange}/>
                 </label>
