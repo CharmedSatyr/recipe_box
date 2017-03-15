@@ -177,7 +177,17 @@ class App extends React.Component {
                     <div className='col-xs-10 col-xs-offset-1 bigbox'>
                         <div className='row'>
                             {this.state.data.map(function(item, index) {
-                                return (<LittleBox key={index} recipe_name={item.recipe_name} description={item.description} ingredients={item.ingredients} directions={item.directions} img={item.img} handleClickView={this.handleView.bind(this, index)}/>)
+                                //The `if` statement is a hacked way to get spacing between rows to appear correctly.
+                                if (index % 3 !== 0 || index === 0) {
+                                    return (<LittleBox key={index} recipe_name={item.recipe_name} description={item.description} ingredients={item.ingredients} directions={item.directions} img={item.img} handleClickView={this.handleView.bind(this, index)}/>);
+                                } else {
+                                    return (
+                                        <span>
+                                            <div className='row'></div>
+                                            <LittleBox key={index} recipe_name={item.recipe_name} description={item.description} ingredients={item.ingredients} directions={item.directions} img={item.img} handleClickView={this.handleView.bind(this, index)}/>
+                                        </span>
+                                    );
+                                }
                             }, this)}
                         </div>
                     </div>
