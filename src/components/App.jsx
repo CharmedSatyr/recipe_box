@@ -6,7 +6,6 @@ import LittleBox from './LittleBox.jsx';
 import View from './View.jsx';
 import Footer from './Footer.jsx';
 
-
 function Recipe(recipe_name, description, ingredients, directions, img) {
     this.recipe_name = recipe_name;
     this.description = description;
@@ -162,7 +161,7 @@ class App extends React.Component {
     }
     //Add recipes to local cache so they will be saved until the browser cache is emptied
     saveToLocal() {
-        //localStorage.setItem('recipe_larder', JSON.stringify(this.state.data));
+        localStorage.setItem('recipe_larder', JSON.stringify(this.state.data));
     }
     render() {
         return (
