@@ -185,7 +185,7 @@ class App extends React.Component {
                                 } else {
                                     return (
                                         <span>
-                                            <div className='row'></div>
+                                            <div className='row'/>
                                             <LittleBox key={index} recipe_name={item.recipe_name} description={item.description} ingredients={item.ingredients} directions={item.directions} img={item.img} handleClickView={this.handleView.bind(this, index)}/>
                                         </span>
                                     );
