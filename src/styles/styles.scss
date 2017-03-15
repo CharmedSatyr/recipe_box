@@ -9,6 +9,14 @@ $bs-border: 1px solid #e3e3e3;
 $thick-border: 5px solid $dark;
 $red: rgba(118, 25, 40, 0.4);
 $yellow: rgba(242, 247, 175, 0.9);
+/* Body Styling */
+body {
+    background-color: $dark;
+    background: $dark url('../img/vegetable-still-life.jpg') no-repeat center;
+    background-attachment: fixed;
+    text-align: center;
+    overflow-x: hidden;
+}
 /* Button styling */
 @mixin button {
     border: 1px solid $dark;
@@ -18,14 +26,6 @@ $yellow: rgba(242, 247, 175, 0.9);
     &:hover {
         border: 1px solid $dark;
     }
-}
-/* Body Styling */
-body {
-    background-color: $dark;
-    background: $dark url('../img/vegetable-still-life.jpg') no-repeat center;
-    background-attachment: fixed;
-    text-align: center;
-    overflow-x: hidden;
 }
 /* Navbar styling */
 @mixin navbar($fs, $align, $float, $ttop, $tmr, $btop) {
@@ -56,149 +56,197 @@ body {
             text-align: $align;
         }
     }
-}; //Apple iPhone 5s, Nokie Lumia 520
-@media screen and (max-width: 321px) and (max-height: 570px) {
-     @include navbar(4.25vh, left, left, 1vh, auto, 1vh);
 }
 //Fill
-@media screen and (max-width: 375px) and (max-height: 666px) {
-     @include navbar(4.25vh, left, left, 1vh, auto, 1vh);
+@media screen and (max-width: 400px) {
+     @include navbar(22px, left, left, 1.25vh, auto, 1vh);
+}
+//Apple iPhone 5s, Nokie Lumia 520
+@media screen and (max-width: 321px) and (max-height: 570px) {
+     @include navbar(24px, left, left, 1vh, auto, 1vh);
 }
 //Apple iPhone 6s
 @media screen and (max-width: 376px) and (min-height: 667px) {
-     @include navbar(4vh, left, left, 0.75vh, auto, 1vh);
+     @include navbar(28px, left, left, 0.75vh, auto, 1vh);
 }
 //Fill
 @media screen and (min-width: 377px) and (max-height: 734px) {
-     @include navbar(4vh, left, left, 0.75vh, auto, 1vh);
+     @include navbar(28px, left, left, 0.75vh, auto, 1vh);
 }
 //Apple iPhone 6 Plus
 @media screen and (min-width: 412px) and (min-height: 735px) {
-     @include navbar(4vh, left, left, 0.5vh, auto, 1vh);
+     @include navbar(28px, left, left, 0.5vh, auto, 1vh);
 }
 //Google Nexus 4
 @media screen and (min-width: 383px) and (max-height: 641px) {
-     @include navbar(4.75vh, left, left, 0.25vh, auto, 1vh);
+     @include navbar(30px, left, left, 0.25vh, auto, 1vh);
 }
 //Google Nexus 5
 @media screen and (min-width: 359px) and (max-height: 641px) {
-     @include navbar(4.75vh, left, left, 0.35vh, auto, 1vh);
+     @include navbar(30px, left, left, 0.35vh, auto, 1vh);
 }
 //Google Nexus 6
 @media screen and (max-width: 413px) and (min-height: 731px) {
-     @include navbar(4vh, left, left, 0.5vh, auto, 1vh);
+     @include navbar(32px, left, left, 0.25vh, auto, 1vh);
 }
 //Google Nexus 7
 @media screen and (min-width: 960px) and (max-height: 601px) {
-     @include navbar(5.5vh, center, none, 0.5vh, -12vw, 1vh);
+     @include navbar(36px, center, none, 0.25vh, -12vw, 1.5vh);
 }
 //Fill
 @media screen and (min-width: 961px) and (min-height: 602px) {
-     @include navbar(5.5vh, center, none, 0.5vh, -12vw, 1vh);
+     @include navbar(36px, center, none, 0.35vh, -12vw, 1vh);
 }
 //Amazon Kindle Fire HDX 8.9
 @media screen and (min-width: 1279px) and (min-height: 799px) {
-     @include navbar(4.25vh, center, none, 1vh, -10vw, 1vh);
+     @include navbar(36px, center, none, 1vh, -10vw, 1vh);
 }
 //Apple iPad Air 2
 @media screen and (min-width: 1024px) and (max-height: 768px) {
-     @include navbar(4.25vh, center, none, 1vh, -11vw, 1vh);
+     @include navbar(36px, center, none, 1vh, -11vw, 1.5vh);
 }
 //Laptop (1366 x 768)
 @media screen and (min-width: 1366px) and (max-height: 768px) {
-     @include navbar(5vh, center, none, 1vh, -8vw, 1.5vh);
+     @include navbar(40px, center, none, 1vh, -8vw, 1.5vh);
 }
 //Laptop (1920 x 1080)
 @media screen and (min-width: 1919px) and (min-height: 1079px) {
-     @include navbar(5vh, center, none, 1vh, -6vw, 2vh);
+     @include navbar(42px, center, none, 1vh, -6vw, 1.5vh);
 }
 /* LittleBox Styling */
-#bg_food {
-    background-clip: content-box;
-    background-position: center;
-    border: 5px solid (0, 0, 0, 1);
-    border-radius: 4px;
-    bottom: 0;
-    box-shadow: inset 0 0 3px $dark;
-    display: block;
-    left: 0;
-    margin: 2vh 2vw 5vh;
-    padding: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -1;
+@mixin lb($bgmargin, $fs, $bgh: inherit) {
+    #bg_food {
+        background-clip: content-box;
+        background-position: center;
+        border: 5px solid (0, 0, 0, 1);
+        border-radius: 4px;
+        bottom: 0;
+        box-shadow: inset 0 0 3px $dark;
+        display: block;
+        left: 0;
+        margin: $bgmargin;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    .littlebox {
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        background: rgba(0, 0, 0, 0.6);
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        border: $thick-border;
+        border-radius: 0;
+        box-shadow: 0 0 1px $dark;
+        color: rgba(250, 250, 250, 0.9);
+        font-family: 'Fredericka the Great', cursive;
+        margin: 2vh 0 5vh;
+        padding: 3%;
+        text-shadow: 0 0 5px $dark;
+        z-index: 2;
+
+        h1,
+        h2,
+        h3 {
+            font-size: $fs;
+        }
+
+        h4 {
+            font-size: $fs * 0.85;
+        }
+
+        img {
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            background-size: cover;
+            border: 1px solid $dark;
+            box-shadow: 0 0 15px $dark;
+            height: $bgh;
+            margin-bottom: 1vh;
+            max-width: 25vw;
+            user-select: none;
+        }
+
+        &:hover {
+            background: $red;
+            cursor: pointer;
+        }
+    }
 }
-
-.littlebox {
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-    background: rgba(0, 0, 0, 0.6);
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    border: $thick-border;
-    border-radius: 0;
-    box-shadow: 0 0 1px $dark;
-    color: rgba(250, 250, 250, 0.9);
-    font-family: 'Fredericka the Great', cursive;
-    margin: 2vh 0 5vh;
-    padding: 3%;
-    text-shadow: 0 0 5px $dark;
-    z-index: 2;
-
-    h1,
-    h2,
-    h3,
-    h4 {
-        font-size: 100%;
-    }
-
-    img {
-        -moz-user-select: none;
-        -ms-user-select: none;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        border: 1px solid $dark; //        border-radius: 4px;
-        box-shadow: 0 0 15px $dark;
-        height: 20vh;
-        margin-bottom: 1vh;
-        max-width: 25vw;
-        user-select: none;
-    }
-
-    &:hover {
-        background: $red;
-        cursor: pointer;
-    }
+//Fill
+@media screen and (max-width: 400px) {
+     @include lb (2vh 5vw 5vh,100%, 5.5vh);
 }
 //Apple iPhone 5s, Nokie Lumia 520
-//@media screen and (max-width: 321px) and (max-height: 570px) {}
-//Fill
-//@media screen and (max-width: 375px) and (max-height: 666px) {}
+@media screen and (max-width: 321px) and (max-height: 570px) {
+     @include lb (2vh 5vw 5vh, 100%, 5vh);
+}
 //Apple iPhone 6s
-//@media screen and (max-width: 376px) and (min-height: 667px) {}
+@media screen and (max-width: 376px) and (min-height: 667px) {
+     @include lb (2vh 5vw 5vh,100%, 6vh);
+}
 //Fill
-//@media screen and (min-width: 377px) and (max-height: 734px) {}
+@media screen and (min-width: 377px) and (max-height: 734px) {
+     @include lb (2vh 4.75vw 5vh,100%, 6vh);
+}
 //Apple iPhone 6 Plus
-//@media screen and (min-width: 412px) and (min-height: 735px) {}
+@media screen and (min-width: 412px) and (min-height: 735px) {
+     @include lb (2vh 4.5vw 5vh,100%, 6vh );
+}
 //Google Nexus 4
-//@media screen and (min-width: 383px) and (max-height: 641px) {}
+@media screen and (min-width: 383px) and (max-height: 641px) {
+     @include lb (2vh 4.5vw 5vh,110%, 6vh);
+}
 //Google Nexus 5
-//@media screen and (min-width: 359px) and (max-height: 641px) {}
+@media screen and (min-width: 359px) and (max-height: 641px) {
+     @include lb (2vh 4.5vw 5vh, 110%, 6vh);
+}
 //Google Nexus 6
-//@media screen and (max-width: 413px) and (min-height: 731px) {}
+@media screen and (max-width: 413px) and (min-height: 731px) {
+     @include lb (2vh 4.5vw 5vh, 120%, 6vh);
+}
+//Fill for bg_food
+@media screen and (min-width: 414px) and (max-width: 600px) {
+     @include lb(2vh 3.5vw 5vh, 125%, 10vh);
+}
+//Fill for bg_food
+@media screen and (min-width: 600px) and (max-width: 800px) {
+     @include lb(2vh 2.5vw 5vh, 125%, 10vh);
+}
+//Fill for bg_food
+@media screen and (min-width: 800px) and (max-width: 960px) {
+     @include lb(2vh 2.25vw 5vh, 125%, 10vh);
+}
 //Google Nexus 7
-//@media screen and (min-width: 960px) and (max-height: 601px) {}
+@media screen and (min-width: 960px) and (max-height: 601px) {
+     @include lb (2vh 2vw 5vh, 125%, 18vh);
+}
 //Fill
-//@media screen and (min-width: 961px) and (min-height: 602px) {}
+@media screen and (min-width: 961px) and (min-height: 602px) {
+     @include lb (2vh 1.75vw 5vh, 125%, 18vh);
+}
 //Amazon Kindle Fire HDX 8.9
-//@media screen and (min-width: 1279px) and (min-height: 799px) {}
+@media screen and (min-width: 1279px) and (min-height: 799px) {
+     @include lb (2vh 1.5vw 5vh, 125%, 18vh);
+}
 //Apple iPad Air 2
-//@media screen and (min-width: 1024px) and (max-height: 768px) {}
+@media screen and (min-width: 1024px) and (max-height: 768px) {
+     @include lb (2vh 1.5vw 5vh, 125%, 18vh);
+}
 //Laptop (1366 x 768)
-//@media screen and (min-width: 1366px) and (max-height: 768px) {}
+@media screen and (min-width: 1366px) and (max-height: 768px) {
+     @include lb (2vh 1.25vw 5vh, 130%, 15vh);
+}
 //Laptop (1920 x 1080)
-//@media screen and (min-width: 1919px) and (min-height: 1079px) {}
+@media screen and (min-width: 1919px) and (min-height: 1079px) {
+     @include lb (2vh 1vw 5vh, 135%, 20vh);
+}
 /* Popup Styling */
 @mixin popup {
     .titles {
@@ -247,6 +295,11 @@ body {
     @include popup;
     text-align: center;
 
+
+    .btn-danger:hover {
+        color: #ffffff; //For some reason this isn't necessary to specify in .view class
+    }
+
     #left {
         float: left;
         margin-left: 5vw;
@@ -270,121 +323,3 @@ body {
 .right-float {
     float: right;
 }
-/*
-//Media Queries
-@media screen and (max-width: 319px) {
-    #bg_food {
-        margin: 2vh 6vw 5vh;
-    }
-}
-@media screen and (min-width: 320px) {
-    .navbar {
-        .title {
-            float: left;
-            font-size: 5vh;
-            margin-left: 0;
-        }
-
-        button {
-            margin-right: 0;
-            padding: 1vh;
-        }
-    }
-
-    #bg_food {
-        margin: 2vh 6vw 5vh;
-    }
-
-    .littlebox {
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-size: 100%;
-        }
-
-        img {
-            width: 17vw;
-        }
-    }
-
-    #Editor {
-        button {
-            padding: 1vh;
-            margin: 0.5vh;
-        }
-
-        input {
-            height: 8vh;
-        }
-    }
-
-    .view {
-        button {
-            padding: 1vh;
-            margin: 1vh;
-        }
-    }
-}
-@media screen and (min-width: 480px) {
-    .navbar {
-        .title {
-            float: left;
-            font-size: 7vh;
-            margin-left: 0;
-        }
-
-        button {
-            margin-right: 0;
-            padding: 1vh;
-        }
-    }
-
-    #bg_food {
-        margin: 2vh 4vw 5vh;
-    }
-
-    .littlebox {
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-size: 100%;
-        }
-
-        img {
-            width: 17vw;
-        }
-    }
-
-    #Editor {
-        button {
-            padding: 1vh;
-            margin: 0.5vh;
-        }
-
-        input {
-            height: 8vh;
-        }
-    }
-
-    .view {
-        button {
-            padding: 1vh;
-            margin: 1vh;
-        }
-    }
-}*/
-/* Media queries for the website thumbnails */
-@media screen and (max-width: 420px) {}
-@media screen and (min-width: 421px) {}
-//Note that this one is HEIGHT
-@media screen and (min-height: 901px) {}
-@media screen and (min-width: 500px) {}
-@media screen and (min-width: 560px) {}
-@media screen and (min-width: 720px) {}
-@media screen and (min-width: 1000px) {}
-@media screen and (min-width: 1200px) {}
-@media screen and (min-width: 1440px) {}
-@media screen and (min-width: 1680px) {}
-@media screen and (min-width: 1920px) {}
