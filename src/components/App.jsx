@@ -72,6 +72,7 @@ class App extends React.Component {
             editClassName: 'hide',
             submitClassName: '',
             viewClassName: 'hide',
+            deleteID: 'left',
             i: 0
         }
     }
@@ -87,7 +88,8 @@ class App extends React.Component {
             EditorClassName: '',
             viewClassName: 'hide',
             editClassName: 'hide',
-            submitClassName: ''
+            submitClassName: '',
+            deleteID: 'hide'
         });
     }
     //Delete a LittleBox
@@ -108,7 +110,7 @@ class App extends React.Component {
     }
     //Close a Editor
     handleClose(event) {
-        this.setState({EditorClassName: 'hide', viewClassName: 'hide'});
+        this.setState({EditorClassName: 'hide', viewClassName: 'hide', deleteID: 'left'});
         document.forms['Editor'].reset();
         event.preventDefault();
     }
@@ -128,7 +130,8 @@ class App extends React.Component {
             ingredients: dummy.ingredients,
             directions: dummy.directions,
             img: dummy.img,
-            EditorClassName: 'hide'
+            EditorClassName: 'hide',
+            deleteID: 'left'
         });
         this.saveToLocal();
         document.forms['Editor'].reset();
@@ -139,7 +142,7 @@ class App extends React.Component {
         const d = document.forms['Editor'];
         recipes.splice((this.state.i), 1, new Recipe(d.recipe_name.value, d.description.value, d.ingredients.value, d.directions.value, d.img.value));
         //this.saveToLocal();
-        this.setState({EditorClassName: 'hide', editClassName: 'hide', submitClassName: ''});
+        this.setState({EditorClassName: 'hide', editClassName: 'hide', submitClassName: '', deleteID: 'left'});
         document.forms['Editor'].reset();
         event.preventDefault();
     }
@@ -166,7 +169,7 @@ class App extends React.Component {
                     <View view_recipe_name={this.state.recipe_name} view_description={this.state.description} view_ingredients={this.state.ingredients} view_directions={this.state.directions} view_img={this.state.img} handleEdit={this.handleEdit.bind(this)} handleClose={this.handleClose.bind(this)} handleDelete={this.handleDelete.bind(this)}/>
                 </div>
                 <div id='Editor' className={this.state.EditorClassName}>
-                    <Editor editClassName={this.state.editClassName} submitClassName={this.state.submitClassName} handleDelete={this.handleDelete.bind(this)} handleClose={this.handleClose.bind(this)} handleInputChange={this.handleInputChange.bind(this)} handleSubmit={this.handleSubmit.bind(this)} handleSubmitEdit={this.handleSubmitEdit.bind(this)}/>
+                    <Editor deleteID={this.state.deleteID} editClassName={this.state.editClassName} submitClassName={this.state.submitClassName} handleDelete={this.handleDelete.bind(this)} handleClose={this.handleClose.bind(this)} handleInputChange={this.handleInputChange.bind(this)} handleSubmit={this.handleSubmit.bind(this)} handleSubmitEdit={this.handleSubmitEdit.bind(this)}/>
                 </div>
 
                 <Header handleClickAdd={this.handleAdd.bind(this)}/>

@@ -281,7 +281,8 @@ body {
         border: 1px inset $dark;
         border-radius: 4px;
         font-weight: 400;
-        margin-bottom: 1vh;
+        margin-bottom: 2vh;
+        margin-top: 1vh;
         font-family: sans-serif;
         width: 60vw;
     }
@@ -319,7 +320,9 @@ body {
 .edit .hide {
     display: none;
 }
-
+#hide {
+  display: none;
+}
 .right-float {
     float: right;
 }

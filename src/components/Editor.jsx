@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Button} from 'react-bootstrap';
-
+ /*id='left'*/
 class Editor extends React.Component {
     render() {
         return (
@@ -39,7 +39,7 @@ class Editor extends React.Component {
                     <input name='img' type='url' value={this.props.img} onChange={this.props.handleInputChange}/>
                 </label>
                 <br/>
-                <Button id='left' className='btn btn-danger' onClick={this.props.handleDelete}>Delete</Button>
+                <Button id={this.props.deleteID} className='btn btn-danger' onClick={this.props.handleDelete}>Delete</Button>
                 <span id='right'>
                     <Button className={this.props.submitClassName} type="submit" onClick={this.props.handleSubmit}>Save</Button>
                     <Button className={this.props.editClassName} type="submit" onClick={this.props.handleSubmitEdit}>Save</Button>
