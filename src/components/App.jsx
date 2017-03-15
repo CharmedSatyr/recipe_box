@@ -4,6 +4,8 @@ import Header from './Header.jsx';
 import Editor from './Editor.jsx';
 import LittleBox from './LittleBox.jsx';
 import View from './View.jsx';
+import Footer from './Footer.jsx';
+
 
 function Recipe(recipe_name, description, ingredients, directions, img) {
     this.recipe_name = recipe_name;
@@ -192,6 +194,7 @@ class App extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Footer/>
             </div>
         )
     }
