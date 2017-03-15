@@ -9,7 +9,6 @@ class LittleBox extends React.Component {
         }
         return (
             <span>
-
                 <div className='col-xs-4'>
                     <div id='bg_food' style={pic}/>
                     <div className='littlebox'>
@@ -26,7 +25,7 @@ class LittleBox extends React.Component {
                                     __html: marked(this.props.description)
                                 }}/>
                             </h4>
-                            <img src={this.props.img || 'http://img.clipartall.com/download-this-image-as-food-clipart-600_465.png'}/>
+                            <img src={this.props.img}/>
                             <br/>
                         </div>
                     </div>
