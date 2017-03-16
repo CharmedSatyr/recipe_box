@@ -120,26 +120,8 @@ body {
      @include navbar(42px, center, none, 1vh, -6vw, 1.5vh);
 }
 /* Bigbox styling */
-@mixin bb($bbmt: 8vh) {
-    .bigbox {
-        margin-top: $bbmt;
-    }
-}
-
-@media screen and (max-height: 400px) {
-  @include bb(10vh);
-}
-@media screen and (min-height: 401px) {
-  @include bb(9vh);
-}
-@media screen and (min-height: 800px) {
-  @include bb(8vh);
-}
-@media screen and (min-height: 1000px) {
-  @include bb(7vh);
-}
-@media screen and (min-height: 1200px) {
-  @include bb(6vh);
+.bigbox {
+    margin-top: 50px;
 }
 
 /* LittleBox Styling */
@@ -356,7 +338,7 @@ body {
 .right-float {
     float: right;
 }
-@mixin foot($heit: 16px, $mleft: 0, $ptop: 0.5%) {
+@mixin foot($heit: 96px, $mleft: 0, $ptop: 0.5%) {
     body {
         //        margin-bottom: -1000px;
         //        padding-bottom: $ptop *207 * (-1);
@@ -403,7 +385,7 @@ body {
 @media screen and (max-width: 280px) {
      @include foot(96px, -6%);
 }
-@media screen and (min-width: 310px) {
+@media screen and (min-width: 281px) {
      @include foot(96px, 4%);
 }
 @media screen and (min-width: 322px) {
@@ -412,38 +394,35 @@ body {
 @media screen and (min-width: 420px) {
      @include foot(96px, -3.75%);
 }
-@media screen and (min-width: 420px) {
-     @include foot(96px, -3.75%);
-}
 @media screen and (min-width: 450px) {
      @include foot(84px, -3.5%);
 }
 @media screen and (min-width: 500px) {
-     @include foot(84px, -3.25%);
+     @include foot(72px, -3.25%);
 }
 @media screen and (min-width: 550px) {
-     @include foot(84px, -2.9%);
+     @include foot(72px, -2.9%);
 }
 @media screen and (min-width: 600px) {
-     @include foot(84px, -2.65%);
+     @include foot(72px, -2.65%);
 }
 @media screen and (min-width: 650px) {
-     @include foot(84px, -2.45%);
+     @include foot(72px, -2.45%);
 }
 @media screen and (min-width: 680px) {
-     @include foot(84px, -2.25%);
+     @include foot(72px, -2.25%);
 }
 @media screen and (min-width: 720px) {
-     @include foot(84px, -2.15%);
+     @include foot(72px, -2.15%);
 }
 @media screen and (min-width: 750px) {
-     @include foot(84px, -2.05%);
+     @include foot(72px, -2.05%);
 }
-@media screen and (min-width: 786px) {
-     @include foot(84px, -2%);
+@media screen and (min-width: 790px) {
+     @include foot(54px, -2%);
 }
 @media screen and (min-width: 800px) {
-     @include foot(72px, -1.9%);
+     @include foot(54px, -1.9%);
 }
 @media screen and (min-width: 840px) {
      @include foot(54px, -1.75%);
