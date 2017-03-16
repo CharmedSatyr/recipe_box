@@ -120,9 +120,28 @@ body {
      @include navbar(42px, center, none, 1vh, -6vw, 1.5vh);
 }
 /* Bigbox styling */
-.bigbox {
-    margin-top: 8vh;
+@mixin bb($bbmt: 8vh) {
+    .bigbox {
+        margin-top: $bbmt;
+    }
 }
+
+@media screen and (max-height: 400px) {
+  @include bb(10vh);
+}
+@media screen and (min-height: 401px) {
+  @include bb(9vh);
+}
+@media screen and (min-height: 800px) {
+  @include bb(8vh);
+}
+@media screen and (min-height: 1000px) {
+  @include bb(7vh);
+}
+@media screen and (min-height: 1200px) {
+  @include bb(6vh);
+}
+
 /* LittleBox Styling */
 @mixin lb($bgmargin, $fs, $bgh: inherit) {
     #bg_food {
@@ -337,10 +356,10 @@ body {
 .right-float {
     float: right;
 }
-@mixin foot($heit: 16px, $mleft: 1.5vw, $ptop: 0.5%) {
+@mixin foot($heit: 16px, $mleft: 0, $ptop: 0.5%) {
     body {
-        margin-bottom: $heit * (-1);
-        padding-bottom: $ptop *7 * (-1);
+        //        margin-bottom: -1000px;
+        //        padding-bottom: $ptop *207 * (-1);
     }
 
     .footer {
@@ -353,9 +372,10 @@ body {
         height: $heit;
         left: 0;
         margin-bottom: 0;
-        margin-left: $mleft;
+        margin-left: 0; //$mleft; //The values below in the @media query mixins worked with position: sticky;
         padding: $ptop 1.25% 0.5%;
-        position: sticky;
+        position: absolute; //i can't get this to stay at the bottom when I add littleboxes!!!!!
+        position: fixed;
         right: 0;
         width: 100%;
         width: 100vw;
@@ -384,10 +404,10 @@ body {
      @include foot(96px, -6%);
 }
 @media screen and (min-width: 310px) {
-     @include foot(96px, -5%);
+     @include foot(96px, 4%);
 }
 @media screen and (min-width: 322px) {
-     @include foot(96px, -4%);
+     @include foot(96px, -2.5%);
 }
 @media screen and (min-width: 420px) {
      @include foot(96px, -3.75%);
