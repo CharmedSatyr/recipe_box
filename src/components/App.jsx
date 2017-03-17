@@ -73,7 +73,7 @@ class App extends React.Component {
             editClassName: 'hide',
             submitClassName: '',
             viewClassName: 'hide',
-            deleteID: 'left',
+            deleteID: '',
             i: 0
         }
     }
@@ -112,7 +112,7 @@ class App extends React.Component {
     }
     //Close a Editor
     handleClose(event) {
-        this.setState({EditorClassName: 'hide', viewClassName: 'hide', deleteID: 'left'});
+        this.setState({EditorClassName: 'hide', viewClassName: 'hide', deleteID: ''});
         document.forms['Editor'].reset();
         event.preventDefault();
     }
@@ -133,7 +133,7 @@ class App extends React.Component {
             directions: dummy.directions,
             img: dummy.img,
             EditorClassName: 'hide',
-            deleteID: 'left'
+            deleteID: ''
         });
         this.saveToLocal();
         document.forms['Editor'].reset();
@@ -144,7 +144,7 @@ class App extends React.Component {
         const d = document.forms['Editor'];
         recipes.splice((this.state.i), 1, new Recipe(d.recipe_name.value, d.description.value, d.ingredients.value, d.directions.value, d.img.value));
         //this.saveToLocal();
-        this.setState({EditorClassName: 'hide', editClassName: 'hide', submitClassName: '', deleteID: 'left'});
+        this.setState({EditorClassName: 'hide', editClassName: 'hide', submitClassName: '', deleteID: ''});
         document.forms['Editor'].reset();
         event.preventDefault();
     }

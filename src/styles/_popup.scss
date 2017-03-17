@@ -1,4 +1,5 @@
 @import '_button.scss';
+@import '_variables.scss';
 /* Popup Styling */
 @mixin popup {
     .titles {
@@ -30,7 +31,7 @@
         margin-bottom: 5px;
         margin-top: 5px;
         font-family: sans-serif;
-        width: 60vh;
+        width: 50vw;
     }
 
     input {
@@ -55,13 +56,13 @@
         color: $white; //For some reason this isn't necessary to specify in .view class
     }
 
-    #left {
+    .left {
         float: left;
-        margin-left: 5vw;
+        margin-left: 1vw;
     }
 
     #right {
         float: right;
-        margin-right: 5vw;
+        margin-right: 1vw;
     }
 }
