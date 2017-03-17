@@ -259,6 +259,9 @@ body {
 }
 /* Popup Styling */
 @mixin popup {
+    .titles {
+        text-align: center;
+    }
     background: $white;
     background: url('../img/creampaper.png');
     border: 1px solid $dark;
