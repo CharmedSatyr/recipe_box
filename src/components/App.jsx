@@ -92,6 +92,7 @@ class App extends React.Component {
             submitClassName: '',
             deleteID: 'hide'
         });
+        window.scrollTo(0,0);
     }
     //Delete a LittleBox
     handleDelete() {
@@ -158,6 +159,7 @@ class App extends React.Component {
             viewClassName: '',
             i: index
         });
+        window.scrollTo(0,0);
     }
     //Add recipes to local cache so they will be saved until the browser cache is emptied
     saveToLocal() {
