@@ -41,7 +41,7 @@ body {
         font-family: 'Fredericka the Great', cursive;
         position: fixed !important;
         width: 100vw;
-        z-index: 2;
+        z-index: 1;
 
         button {
             @include button;
@@ -153,7 +153,7 @@ body {
         border-radius: 0;
         box-shadow: 0 0 1px $dark;
         color: $white;
-        font-family: 'Fredericka the Great', cursive;
+        font-family: 'Fredericka the Great', sans-serif;
         margin: 2vh 0 5vh;
         padding: 3%;
         text-shadow: 0 0 5px $dark;
@@ -259,28 +259,19 @@ body {
 }
 /* Popup Styling */
 @mixin popup {
-    .titles {
-        text-align: center;
-    }
     background: $white;
     background: url('../img/creampaper.png');
-    border: $bs-border;
+    border: 1px solid $dark;
     border-radius: 4px;
     color: $dark;
     font-family: 'Fredericka the Great', cursive;
     left: 0;
-    margin: 1.5vh auto;
-    padding: 5vh;
+    margin: 1% auto auto;
+    padding: 3% 5% 5%;
     position: absolute;
     right: 0;
-    width: 75%;
-    z-index: 1;
-
-    img {
-        height: 100%;
-        margin-bottom: 1vh;
-        z-index: -1;
-    }
+    width: 65%;
+    z-index: 30;
 
     button {
         @include button;
@@ -291,14 +282,14 @@ body {
         border: 1px inset $dark;
         border-radius: 4px;
         font-weight: 400;
-        margin-bottom: 2vh;
-        margin-top: 1vh;
+        margin-bottom: 5px;
+        margin-top: 5px;
         font-family: sans-serif;
-        width: 60vw;
+        width: 60vh;
     }
 
     input {
-        height: 4.5vh;
+        height: 4vh;
     }
 }
 
@@ -342,7 +333,7 @@ body {
         background: $dark;
         bottom: 0;
         color: $white;
-        font-family: 'Fredericka the Great', cursive;
+        font-family: 'Fredericka the Great', sans-serif;
         font-size: 12px;
         font-weight: 400;
         height: $heit;
