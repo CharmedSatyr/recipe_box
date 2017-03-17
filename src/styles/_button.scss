@@ -1,0 +1,12 @@
+@import '_variables.scss';
+
+/* Button styling */
+@mixin button {
+    border: 1px solid $dark;
+    color: $dark;
+    margin: 1vh;
+
+    &:hover {
+        border: 1px solid $dark;
+    }
+}

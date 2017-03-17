@@ -1,0 +1,66 @@
+/* Popup Styling */
+@mixin popup {
+    .titles {
+        text-align: center;
+    }
+    background: $white;
+    background: url('../img/creampaper.png');
+    border: 1px solid $dark;
+    border-radius: 4px;
+    color: $dark;
+    font-family: 'Fredericka the Great', cursive;
+    left: 0;
+    margin: 1% auto auto;
+    padding: 3% 5%;
+    position: absolute;
+    right: 0;
+    width: 65%;
+    z-index: 30;
+
+    button {
+        //  @include button;
+    }
+
+    input,
+    textarea {
+        border: 1px inset $dark;
+        border-radius: 4px;
+        font-weight: 400;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        font-family: sans-serif;
+        width: 60vh;
+    }
+
+    input {
+        height: 4vh;
+    }
+}
+
+.right-float {
+    float: right;
+}
+
+.view {
+    @include popup;
+    text-align: left;
+}
+
+#Editor {
+    @include popup;
+    text-align: center;
+
+    .btn-danger:hover {
+        color: $white; //For some reason this isn't necessary to specify in .view class
+    }
+
+    #left {
+        float: left;
+        margin-left: 5vw;
+    }
+
+    #right {
+        float: right;
+        margin-right: 5vw;
+    }
+}
