@@ -37,6 +37,16 @@
     input {
         height: 4vh;
     }
+
+
+@media screen and (max-width: 720px) {
+  margin: auto;
+  width: 100%;
+  input, textarea {
+    width: 75vw;
+  }
+}
+
 }
 
 .right-float {
