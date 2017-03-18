@@ -6,20 +6,20 @@ class View extends React.Component {
     render() {
         return (
             <div className='view'>
-                <h1>
+                <h3>
                     <strong>
                         <span className='titles' dangerouslySetInnerHTML={{
                             __html: marked(this.props.view_recipe_name)
                         }}/>
                     </strong>
-                </h1>
-                <h3>
+                </h3>
+                <h4>
                     <strong>
                         <span className='titles' dangerouslySetInnerHTML={{
                             __html: marked(this.props.view_description)
                         }}/>
                     </strong>
-                </h3>
+                </h4>
                 <div>
                     <span dangerouslySetInnerHTML={{
                         __html: marked(this.props.view_ingredients)
