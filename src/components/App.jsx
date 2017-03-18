@@ -157,7 +157,9 @@ class App extends React.Component {
             directions: '**Directions:** \n\n' + recipes[index].directions,
             img: recipes[index].img,
             viewClassName: '',
-            i: index
+            i: index,
+            EditorClassName: 'hide',
+
         });
         window.scrollTo(0,0);
     }
