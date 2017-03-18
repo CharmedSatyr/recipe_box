@@ -7,7 +7,7 @@ class Editor extends React.Component {
             <div className='container-fluid'>
                 <form name='Editor'>
                     <h4>Style your recipe using&nbsp;
-                        <a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>GitHub-flavored Markdown Language</a>!
+                        <a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>GitHub-flavored Markdown Language</a>
                     </h4>
                     <label>
                         Name:
