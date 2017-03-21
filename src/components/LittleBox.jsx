@@ -15,15 +15,17 @@ class LittleBox extends React.Component {
                         <div onClick={this.props.handleClickView}>
                             <h3>
                                 <strong>
-                                    <span className='titles' dangerouslySetInnerHTML={{
-                                        __html: marked(this.props.recipe_name)
-                                    }}/>
+                                    <h3>
+                                        <strong>
+                                            {this.props.recipe_name}
+                                        </strong>
+                                    </h3>
                                 </strong>
                             </h3>
                             <h4>
-                                <span className='titles' dangerouslySetInnerHTML={{
-                                    __html: marked(this.props.description)
-                                }}/>
+                                <h4>
+                                    {this.props.description}
+                                </h4>
                             </h4>
                             <img src={this.props.img}/>
                             <br/>

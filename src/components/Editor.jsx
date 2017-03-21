@@ -6,9 +6,6 @@ class Editor extends React.Component {
         return (
             <div className='container-fluid'>
                 <form name='Editor'>
-                    <h4>Style your recipe using&nbsp;
-                        <a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>GitHub-flavored Markdown Language</a>
-                    </h4>
                     <label>
                         Name:
                         <br/>
@@ -22,13 +19,13 @@ class Editor extends React.Component {
                     </label>
                     <br/>
                     <label>
-                        Ingredients:
+                        Ingredients<a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>*</a>:
                         <br/>
                         <textarea name="ingredients" type="text" rows='2' value={this.props.ingredients} onChange={this.props.handleInputChange}/>
                     </label>
                     <br/>
                     <label>
-                        Directions:
+                        Directions<a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>*</a>:
                         <br/>
                         <textarea name="directions" type="text" rows='3' value={this.props.directions} onChange={this.props.handleInputChange}/>
                     </label>
@@ -38,6 +35,9 @@ class Editor extends React.Component {
                         <br/>
                         <input name='img' type='url' value={this.props.img} onChange={this.props.handleInputChange}/>
                     </label>
+                    <h4>*Supports styling with&nbsp;
+                        <a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>GitHub-flavored Markdown Language</a>
+                    </h4>
                     <br/>
                     <Button id={this.props.deleteID} className='left btn btn-danger' onClick={this.props.handleDelete}>Delete</Button>
                     <span id='right'>
