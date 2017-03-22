@@ -7,37 +7,40 @@ class Editor extends React.Component {
             <div className='container-fluid'>
                 <form name='Editor'>
                     <label>
-                        Name:
-                        <br/>
-                        <input name='recipe_name' type='text' value={this.props.recipe_name} onChange={this.props.handleInputChange}/>
+                        <h4>
+                            <strong>Name:</strong>
+                        </h4>
                     </label>
+                    <br/>
+                    <input name='recipe_name' type='text' value={this.props.recipe_name} onChange={this.props.handleInputChange}/>
                     <br/>
                     <label>
                         Description:
-                        <br/>
-                        <input name="description" type="text" value={this.props.description} onChange={this.props.handleInputChange}/>
                     </label>
+                    <br/>
+                    <input name="description" type="text" value={this.props.description} onChange={this.props.handleInputChange}/>
+
                     <br/>
                     <label>
                         Ingredients<a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>*</a>:
-                        <br/>
-                        <textarea name="ingredients" type="text" rows='2' value={this.props.ingredients} onChange={this.props.handleInputChange}/>
                     </label>
+                    <br/>
+                    <textarea name="ingredients" type="text" rows='2' value={this.props.ingredients} onChange={this.props.handleInputChange}/>
                     <br/>
                     <label>
                         Directions<a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>*</a>:
-                        <br/>
-                        <textarea name="directions" type="text" rows='3' value={this.props.directions} onChange={this.props.handleInputChange}/>
                     </label>
+                    <br/>
+                    <textarea name="directions" type="text" rows='3' value={this.props.directions} onChange={this.props.handleInputChange}/>
                     <br/>
                     <label>
                         Image URL (e.g., https://www.example.com/photo.jpg):
-                        <br/>
-                        <input name='img' type='url' value={this.props.img} onChange={this.props.handleInputChange}/>
                     </label>
-                    <h4>*Supports styling with&nbsp;
+                    <br/>
+                    <input name='img' type='url' value={this.props.img} onChange={this.props.handleInputChange}/>
+                    <h5>*Supports styling with&nbsp;
                         <a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>GitHub-flavored Markdown Language</a>
-                    </h4>
+                    </h5>
                     <br/>
                     <Button id={this.props.deleteID} className='left btn btn-danger' onClick={this.props.handleDelete}>Delete</Button>
                     <span id='right'>

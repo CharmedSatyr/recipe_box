@@ -25,6 +25,7 @@ class View extends React.Component {
                         __html: marked(this.props.view_ingredients)
                     }}/>
                 </div>
+                <br/>
                 <div>
                     <span dangerouslySetInnerHTML={{
                         __html: marked(this.props.view_directions)

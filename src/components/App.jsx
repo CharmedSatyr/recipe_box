@@ -146,8 +146,8 @@ class App extends React.Component {
         this.setState({
             recipe_name: recipes[index].recipe_name,
             description: recipes[index].description,
-            ingredients: '**Ingredients:** \n\n' + recipes[index].ingredients,
-            directions: '**Directions:** \n\n' + recipes[index].directions,
+            ingredients: '#### **Ingredients:** \n\n' + recipes[index].ingredients,
+            directions: '#### **Directions:** \n\n' + recipes[index].directions,
             img: recipes[index].img,
             viewClassName: '',
             i: index,
