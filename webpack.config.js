@@ -21,6 +21,7 @@ module.exports = {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
+                    publicPath: '../', //The Plugin assumes css is in the same directory as the html by default (?) and redoes paths!
                     use: [
                         {
                             loader: 'css-loader',
@@ -32,6 +33,7 @@ module.exports = {
                             options: {
                                 minimize: true
                             }
+
                         }
                     ]
                 })
@@ -71,7 +73,7 @@ module.exports = {
             inject: 'body'
         }),
         new ExtractTextPlugin({
-            filename: /*'styles/' + */'[name].min.css' //The additional folder loses a few fonts/images
+            filename: 'styles/[name]+[contenthash].min.css'
         })
     ]
 };
