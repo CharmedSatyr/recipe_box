@@ -7,9 +7,7 @@ class Editor extends React.Component {
             <div className='container-fluid'>
                 <form name='Editor'>
                     <label>
-                        <h4>
                             <strong>Name:</strong>
-                        </h4>
                     </label>
                     <br/>
                     <input name='recipe_name' type='text' value={this.props.recipe_name} onChange={this.props.handleInputChange}/>
@@ -38,9 +36,8 @@ class Editor extends React.Component {
                     </label>
                     <br/>
                     <input name='img' type='url' value={this.props.img} onChange={this.props.handleInputChange}/>
-                    <h5>*Supports styling with&nbsp;
-                        <a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>GitHub-flavored Markdown Language</a>
-                    </h5>
+                    *Supports styling with&nbsp;
+                    <a href='https://charmedsatyr.com/sites/0012-markdown-previewer/build/index.html' target='_blank'>GitHub-flavored Markdown Language</a>
                     <br/>
                     <Button id={this.props.deleteID} className='left btn btn-danger' onClick={this.props.handleDelete}>Delete</Button>
                     <span id='right'>
