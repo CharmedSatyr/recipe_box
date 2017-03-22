@@ -2,6 +2,8 @@ const path = require('path'); //Not sure why this is here.
 const webpack = require('webpack'); //Not sure why this is here.
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
+//const url = require('file-loader?path=./img');
+
 module.exports = {
     entry: __dirname + '/src/index.jsx',
     module: {
@@ -14,47 +16,63 @@ module.exports = {
                     presets: ['es2015', 'react']
                 }
             }, {
-                test: /\.scss$/,
-                loader: ['style-loader', 'css-loader', 'sass-loader']
-            }, {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
+            }, {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            }, {
+                test: /\.jpg$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000, //limit =< 10000 ? Data URL : fallback to file-loader
+                    name: 'img/[sha256:hash:10].[ext]' //If using file-loader, emit to img/ as a 10 digit sha256 has with the proper extension.
+                }
             }, {
                 test: /\.png$/,
                 loader: 'url-loader',
                 options: {
-                    limit: 100000
+                    limit: 10000, //limit =< 10000 ? Data URL : fallback to file-loader
+                    name: 'img/[sha256:hash:10].[ext]' //If using file-loader, emit to img/ as a 10 digit sha256 has with the proper extension.
                 }
             }, {
-                test: /\.jpg$/,
-                loader: 'file-loader'
-            },
-            {
                 test: /\.gif$/,
-                loader: 'file-loader'
+                loader: 'url-loader',
+                options: {
+                    limit: 10000, //limit =< 10000 ? Data URL : fallback to file-loader
+                    name: 'img/[sha256:hash:10].[ext]' //If using file-loader, emit to img/ as a 10 digit sha256 has with the proper extension.
+                }
             }, {
                 test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    mimetype: 'application/font-woff'
+                    mimetype: 'application/font-woff',
+                    name: 'fonts/[sha256:hash:7].[ext]'
                 }
             }, {
                 test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    mimetype: 'application/octet-stream'
+                    mimetype: 'application/octet-stream',
+                    name: 'fonts/[sha256:hash:7].[ext]'
                 }
             }, {
                 test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file-loader'
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    mimetype: 'application/octet-stream',
+                    name: 'fonts/[sha256:hash:7].[ext]'
+                }
             }, {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    mimetype: 'image/svg+xml'
+                    mimetype: 'image/svg+xml',
+                    name: 'fonts/[sha256:hash:7].[ext]'
                 }
             }
         ]
