@@ -58,7 +58,7 @@ module.exports = {
     },
     output: {
         filename: 'js/bundle.min.js',
-        path: __dirname + '/build'
+        path: __dirname
     },
     plugins: [
         new webpack.DefinePlugin({ //This streamlines minification and gets rid of *.min.js console warnings for UglifyJsPlugin
@@ -69,7 +69,7 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin(),
         new HTMLWebpackPlugin({
             template: __dirname + '/src/index.html',
-            filename: __dirname + '/build/index.html',
+            filename: __dirname + '/index.html',
             inject: 'body'
         }),
         new ExtractTextPlugin({
