@@ -1,6 +1,6 @@
 # **Recipe Box**
 ### **"Build a Recipe Box"** is a requirement for freeCodeCamp Data Visualization Certification: https://www.freecodecamp.com/challenges/build-a-recipe-box
-#### **Data Completed**: Mar 16, 2017
+#### **Project Completed**: Mar 16, 2017
 
 >1. **Objective**: Build a [CodePen.io]('https://codepen.io') app that is functionally similar to this: https://codepen.io/FreeCodeCamp/full/xVXWag/.
 
